@@ -5,6 +5,7 @@ class ConvertSecond{
     private:
         int hour,minute,second;
     public:
+    ConvertSecond() : hour(0), minute(0), second(0) {}
     void setData(){
         cout << "시(hour) 입력:";
         cin >> hour;
@@ -29,3 +30,4 @@ int main(){
     cout << "기본 시간은 총 " << b.getResult() << " 초 입니다."<< endl;
     
 }
+
