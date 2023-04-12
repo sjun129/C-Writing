@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class bab{
+    public:
+        void bab_choose(string a){
+            if(a == "밥"){
+                cout << "얼른 배달 시켜.."<<endl;
+            }
+            else{
+                cout << "그걸 왜 먹냐.."<<endl;
+            }
+        }
+        
+};
+int main(){
+    string b;
+    bab ox;
+    cout << "Choose one" << endl << "밥 or 빵" << endl << "입력: "; 
+    getline(cin,b);
+    ox.bab_choose(b);
+}
