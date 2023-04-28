@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+    
+    ifstream fin;
+    ofstream fout;
+    int temp,sum;
+    fin.open("a.txt");
+    fout.open("b.txt");
+    
+    
+    
+    for(int i = 0; i < 5; i++){
+        fin >> temp;
+        sum += temp;
+    }
+    
+    fout << "합계: " << sum << endl;
+    fout << "평균: " << (double)sum/5;
+    
+    
+    
+}
