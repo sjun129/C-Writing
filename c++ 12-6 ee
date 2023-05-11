@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    ifstream fin("score.txt");
+    ofstream fout("result.txt");
+    
+    string name[31];
+    double score[31];
+    double sum = 0;
+    double best_score = 0;
+    string best_name;
+    
+    for(int i = 0; i < 31; i++){
+        fin >> name[i] >> score[i];
+        sum += score[i];
+        best_score = best_score > score[i] ? best_score : score[i];
+    }
+    
+    
+    fout << "합계: " << sum << endl;
+    fout << "평균: " << sum/31.0 << endl;
+    fout << "최고점: " << best_score ;
+    
+}
