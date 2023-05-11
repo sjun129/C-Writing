@@ -18,11 +18,15 @@ int main()
         fin >> name[i] >> score[i];
         sum += score[i];
         best_score = best_score > score[i] ? best_score : score[i];
+        if(best_score == score[i]){
+            best_name = name[i];
+        }
     }
     
-    
+    fout << fixed;
+    fout.precision(2);
     fout << "합계: " << sum << endl;
     fout << "평균: " << sum/31.0 << endl;
-    fout << "최고점: " << best_score ;
+    fout << "최고점: " << best_name << " " <<best_score ;
     
 }
