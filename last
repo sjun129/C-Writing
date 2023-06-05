@@ -19,7 +19,7 @@ int main()
     fin.close();
     print_2dim_array(m, size);
     cout << "-------------------------------" << endl;
-    cout << "총 동물 수 = " << size+1 << endl;
+    cout << "총 동물 수 = " << size << endl;
     cout << "-------------------------------" << endl;
     string a;
     while(true){
@@ -27,12 +27,13 @@ int main()
         getline(cin,a);
         if (a == "exit") break;
         
-        for(int i = 0; i < size+1; i++){
-            if(m[size][0] == a){
-                cout << "--> " << m[size][1] << endl;
+        for(int i = 0; i < size; i++){
+            if(m[i][0] == a){
+                cout << "--> " << m[i][1] << endl;
                 break;
             }
-            else(m)
+            else if(i+1 == size){
+                cout << "미등록 동물입니다." << endl;
             }
         }
     }
