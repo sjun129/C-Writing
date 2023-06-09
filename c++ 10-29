@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+    string country,capital;
+    char answer;
+    map <string, string> m;
+    ofstream fout("capital.txt");
+    
+    while(true){
+        cout << "나라 수도: ";
+        getline(cin, country, ' ');
+        if(country == "exit") break;
+        getline(cin, capital);
+        if(m.count(country) == 1){
+            cout << "이미 등록된 나라입니다. 수정할까요? (y/n) : ";
+            cin >> answer;
+            if(answer == 'y'){
+                m[capital] = capital;
+            }
+        }
+        m.insert(make_pair(country,capital));
+        
+    }
+    for(auto it = m.begin(); it != m.end(); it++){
+        fout << it-> first << it-> second << endl;
+    }
+}
